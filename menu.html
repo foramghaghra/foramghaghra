@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #4c4646;
+        }
+
+        .menu-container {
+            display: block;
+            margin: 80px 50px;
+            background-color: white;
+            padding: 5px 0;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .menu-container .menu-list {
+            display: flex;
+            margin: 0px;
+            justify-content: space-evenly;
+        }
+
+        .menu-container .list-item {
+            list-style: none;
+            position: relative;
+        }
+
+        .menu-container .list-item .icon-link i {
+            font-size: 40px;
+            transition: all .40s;
+        }
+
+        .menu-container .list-item i {
+            background-color: transparent;
+            padding: 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            height: 50px;
+            width: 50px;
+            text-align: center;
+        }
+
+        .menu-container .list-item:hover i {
+            /* opacity: 1; */
+            transform: translateY(-50px);
+            background-color: lawngreen
+        }
+
+        .active a::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -10px;
+            background-color: white;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            z-index: -1;
+            transform: translateX(0px);
+            transition: all .40s;
+            /* opacity: 0; */
+        }
+
+        .current a::after {
+            content: '';
+            position: absolute;
+            top: -60px;
+            left: -230px;
+            background-color: white;
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+            z-index: -1;
+            transition: all .40s;
+            opacity: 0;
+        }
+
+        .list-item.current:hover a::after {
+            opacity: 1;
+            left: -10px;
+        }
+
+
+        /* .menu-container .list-item.current:hover a::after{
+            transform: translateX(104px);
+            left: 100px;
+        } */
+
+        /* .active a:hover::after{} */
+    </style>
+</head>
+
+<body>
+    <div class="menu-container">
+        <ul class="menu-list">
+            <li class="list-item active"><a href="#" class="icon-link"><i class="fas fa-home"></i></a></li>
+            <li class="list-item current"><a href="#" class="icon-link"><i class="far fa-user"></i></a></li>
+            <li class="list-item current"><a href="#" class="icon-link"><i class="far fa-comment"></i></a></li>
+            <li class="list-item current"><a href="#" class="icon-link"><i class="fas fa-camera"></i></a></li>
+            <li class="list-item current"><a href="#" class="icon-link"><i class="fas fa-cog"></i></a></li>
+        </ul>
+    </div>
+</body>
+
+</html>
